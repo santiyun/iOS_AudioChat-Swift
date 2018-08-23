@@ -1,0 +1,6 @@
+framework module TTTRtcEngineVoiceKit {
+  umbrella header "TTTRtcEngineVoiceKit.h"
+
+  export *
+  module * { export * }
+}

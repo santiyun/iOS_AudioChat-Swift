@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TTTAVRegion" customModule="TTTAduioChat" customModuleProvider="target">
+            <connections>
+                <outlet property="audioStatsLabel" destination="6Q5-gg-DIt" id="6Nb-ec-zsU"/>
+                <outlet property="backgroundView" destination="iN0-l3-epB" id="aPr-Nf-lv6"/>
+                <outlet property="idLabel" destination="ji2-SI-Ci3" id="T9s-kc-Tpf"/>
+                <outlet property="voiceBtn" destination="xHM-F1-0C7" id="zAB-DC-jYa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio_head" translatesAutoresizingMaskIntoConstraints="NO" id="1z9-PY-tA3">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="320"/>
+                </imageView>
+                <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHM-F1-0C7">
+                    <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="28" id="Vps-bT-ubR"/>
+                        <constraint firstAttribute="width" constant="28" id="YNP-rf-27i"/>
+                    </constraints>
+                    <state key="normal" image="voice_small"/>
+                </button>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1111" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ji2-SI-Ci3">
+                    <rect key="frame" x="33" y="0.0" width="174" height="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A-↓0kbps" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Q5-gg-DIt">
+                    <rect key="frame" x="0.0" y="304" width="240" height="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.41568627450980389" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1z9-PY-tA3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Ss-4o-CML"/>
+                <constraint firstItem="xHM-F1-0C7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1Jj-AK-96s"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1z9-PY-tA3" secondAttribute="trailing" id="6hX-Pw-9sg"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ji2-SI-Ci3" secondAttribute="trailing" constant="33" id="BQz-Ra-5i2"/>
+                <constraint firstItem="6Q5-gg-DIt" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="FnB-j6-O8r"/>
+                <constraint firstItem="ji2-SI-Ci3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MSV-y8-w4g"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="6Q5-gg-DIt" secondAttribute="trailing" id="anX-NK-4Za"/>
+                <constraint firstItem="1z9-PY-tA3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="bbc-h0-Fsb"/>
+                <constraint firstItem="ji2-SI-Ci3" firstAttribute="leading" secondItem="xHM-F1-0C7" secondAttribute="trailing" constant="5" id="e2q-54-UqQ"/>
+                <constraint firstItem="xHM-F1-0C7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="eBj-GB-VoV"/>
+                <constraint firstItem="6Q5-gg-DIt" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="hog-r2-amf"/>
+                <constraint firstAttribute="bottom" secondItem="1z9-PY-tA3" secondAttribute="bottom" id="t3W-tF-Pz0"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="audio_head" width="120" height="135"/>
+        <image name="voice_small" width="35" height="35"/>
+    </resources>
+</document>
