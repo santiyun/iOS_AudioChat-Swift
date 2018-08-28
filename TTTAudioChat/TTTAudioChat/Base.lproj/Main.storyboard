@@ -35,11 +35,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入房间ID" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oxo-BE-2X2">
-                                        <rect key="frame" x="101.66666666666669" y="0.0" width="205" height="33"/>
+                                        <rect key="frame" x="101.66666666666667" y="0.0" width="223.33333333333331" height="33"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="205" id="G9W-gM-vrn"/>
-                                        </constraints>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -53,16 +50,17 @@
                                     <constraint firstItem="Zf1-HH-9xf" firstAttribute="leading" secondItem="93o-Lj-mf2" secondAttribute="leading" constant="50" id="HdN-sa-vac"/>
                                     <constraint firstAttribute="bottom" secondItem="Zf1-HH-9xf" secondAttribute="bottom" id="Rfg-kf-ZLa"/>
                                     <constraint firstAttribute="height" constant="33" id="a0W-16-oXW"/>
+                                    <constraint firstAttribute="trailing" secondItem="oxo-BE-2X2" secondAttribute="trailing" constant="50" id="ln3-cw-TUi"/>
                                     <constraint firstItem="oxo-BE-2X2" firstAttribute="top" secondItem="93o-Lj-mf2" secondAttribute="top" id="ywF-7G-mBq"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsf-2s-zCo">
                                 <rect key="frame" x="50" y="344" width="275" height="40"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.71372549019607845" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Ye1-SU-sEr"/>
                                 </constraints>
-                                <state key="normal" title="进入">
+                                <state key="normal" title="进入房间">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -81,7 +79,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音频通话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpC-0Z-CBA">
-                                <rect key="frame" x="159" y="684" width="57.666666666666657" height="17"/>
+                                <rect key="frame" x="158.66666666666666" y="684" width="57.666666666666657" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -161,11 +159,11 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="49Q-Rd-XoX" customClass="TTTAVRegion" customModule="TTTAudioChat" customModuleProvider="target">
-                                                <rect key="frame" x="126" y="0.0" width="123" height="166.66666666666666"/>
+                                                <rect key="frame" x="126" y="0.0" width="123.33333333333331" height="166.66666666666666"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-CB-aUl" customClass="TTTAVRegion" customModule="TTTAudioChat" customModuleProvider="target">
-                                                <rect key="frame" x="250" y="0.0" width="123" height="166.66666666666666"/>
+                                                <rect key="frame" x="250.33333333333334" y="0.0" width="122.66666666666666" height="166.66666666666666"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GPZ-9P-rRg" customClass="TTTAVRegion" customModule="TTTAudioChat" customModuleProvider="target">
@@ -173,11 +171,11 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lS-C6-IF7" customClass="TTTAVRegion" customModule="TTTAudioChat" customModuleProvider="target">
-                                                <rect key="frame" x="126" y="167" width="123" height="166"/>
+                                                <rect key="frame" x="126" y="167" width="123.33333333333331" height="166"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DIi-Z6-g4d" customClass="TTTAVRegion" customModule="TTTAudioChat" customModuleProvider="target">
-                                                <rect key="frame" x="250" y="167.66666666666663" width="123" height="166"/>
+                                                <rect key="frame" x="250.33333333333334" y="167.66666666666663" width="122.66666666666666" height="166"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                         </subviews>

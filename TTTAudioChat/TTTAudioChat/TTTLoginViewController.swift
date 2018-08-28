@@ -20,7 +20,7 @@ class TTTLoginViewController: UIViewController {
         let websitePrefix = "http://www.3ttech.cn  version  "
         websiteLabel.text = websitePrefix + TTTRtcEngineKit.getSdkVersion()
         uid = Int64(arc4random() % 100000) + 1
-        if let rid = UserDefaults.standard.value(forKey: "ENTERROOMID") as? Int {
+        if let rid = UserDefaults.standard.value(forKey: "ENTERROOMID") as? Int64 {
             roomIDTF.text = rid.description
         } else {
             roomIDTF.text = (arc4random() % 100000 + 1).description
@@ -28,10 +28,11 @@ class TTTLoginViewController: UIViewController {
     }
 
     @IBAction func enterChannel(_ sender: Any) {
-        guard let rid = Int(roomIDTF.text!) else {
-            showToast("请输入正确的房间ID")
+        if roomIDTF.text == nil || roomIDTF.text!.count == 0 || roomIDTF.text!.count >= 19 {
+            showToast("请输入19位以内的房间ID")
             return
         }
+        let rid = Int64(roomIDTF.text!)!
         TTManager.me.uid = uid
         TTManager.me.mutedSelf = false
         TTManager.roomID = rid

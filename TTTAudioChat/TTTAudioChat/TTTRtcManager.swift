@@ -15,7 +15,7 @@ class TTTRtcManager: NSObject {
 
     public static let manager = TTTRtcManager()
     public var rtcEngine: TTTRtcEngineKit!
-    public var roomID = 0
+    public var roomID: Int64 = 0
     public var me = TTTUser(0)
     private override init() {
         super.init()
