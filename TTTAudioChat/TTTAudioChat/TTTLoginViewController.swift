@@ -45,7 +45,9 @@ class TTTLoginViewController: UIViewController {
         TTManager.rtcEngine.muteLocalAudioStream(false)
         TTManager.rtcEngine.enableAudioVolumeIndication(200, smooth: 3)
         //设置为高音质
-//        TTManager.rtcEngine.setHighQualityAudioParametersWithFullband(true, stereo: true, fullBitrate: true)
+        if TTManager.isHighQualityAudio {
+            TTManager.rtcEngine.setHighQualityAudioParametersWithFullband(true, stereo: true, fullBitrate: true)
+        }
         TTManager.rtcEngine.joinChannel(byKey: nil, channelName: roomIDTF.text!, uid: uid, joinSuccess: nil)
     }
     
