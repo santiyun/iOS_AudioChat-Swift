@@ -18,6 +18,8 @@ typedef NS_ENUM(NSUInteger, TTTRtcErrorCode) {
     TTTRtc_Error_Enter_BadVersion   = 9004, // 版本错误
     TTTRtc_Error_Enter_Unknown      = 9005, // 未知错误
     //
+    TTTRtc_Error_NoAudioData        = 9101, // 长时间没有上行音频数据
+    //
     TTTRtc_Error_Unknown            = 9999, // 未知错误
 };
 
@@ -129,6 +131,7 @@ typedef NS_ENUM(NSUInteger, TTTNetworkQuality) {
 @property (assign, nonatomic) NSUInteger encodedBitrate;  // 编码的码率(kbps)
 @property (assign, nonatomic) NSUInteger sentBitrate;     // 发送的码率(kbps)
 @property (assign, nonatomic) NSUInteger receivedBitrate; // 接收的码率(kbps)
+@property (assign, nonatomic) NSUInteger captureDataSize; // push数据量
 
 @end
 
@@ -139,6 +142,9 @@ typedef NS_ENUM(NSUInteger, TTTNetworkQuality) {
 
 @property (assign, nonatomic) int64_t uid;
 @property (assign, nonatomic) NSUInteger receivedBitrate;
+@property (assign, nonatomic) NSUInteger loseRate;          //丢包率
+@property (assign, nonatomic) NSUInteger bufferDuration;    //缓存时常
+@property (nonatomic, assign) NSUInteger delay;
 
 @end
 
@@ -312,9 +318,9 @@ typedef NS_ENUM(NSUInteger, TTTNetworkQuality) {
  *  启用/关闭本地音频和远端音频数据回调
  *  对应本地和远端音频数据的代理回调
  *
- *  @param local YES: 获取本地音频数据，NO: 关闭获取本地音频数据。
+ *  @param enableLocal YES: 获取本地音频数据，NO: 关闭获取本地音频数据。
  *
- *  @param remote YES: 获取远端音频数据，NO: 关闭获取远端音频数据。
+ *  @param enableRemote YES: 获取远端音频数据，NO: 关闭获取远端音频数据。
  *
  *  @return 0: 方法调用成功，<0: 方法调用失败。
  */
@@ -476,6 +482,15 @@ typedef NS_ENUM(NSUInteger, TTTNetworkQuality) {
  *  @return 0: 方法调用成功，<0: 方法调用失败。
  */
 - (int)kickChannelUser:(int64_t)uid;
+
+/**
+ *  配置旁路直播推流
+ *
+ *  @param config 直播推流配置
+ *
+ *  @return 0: 方法调用成功，<0: 方法调用失败。
+ */
+- (int)configPublisher:(TTTPublisherConfiguration *)config;
 
 /**
  *  发送聊天消息

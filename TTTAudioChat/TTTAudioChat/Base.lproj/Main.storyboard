@@ -72,19 +72,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://www.3ttech.cn  version  2.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LRI-lG-mLO">
-                                <rect key="frame" x="72.666666666666686" y="731" width="230" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="87.000000000000014" y="733.66666666666663" width="201.33333333333337" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音频通话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpC-0Z-CBA">
-                                <rect key="frame" x="158.66666666666666" y="684" width="58" height="17"/>
+                                <rect key="frame" x="158.66666666666666" y="686.66666666666663" width="58" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipn-jh-o3r">
-                                <rect key="frame" x="156.66666666666666" y="634" width="62" height="30"/>
+                                <rect key="frame" x="156.66666666666666" y="636.66666666666663" width="62" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="高级设置">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -426,7 +426,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="audio_head" width="120" height="135"/>
+        <image name="audio_head" width="120" height="135.66667175292969"/>
         <image name="back" width="30" height="30"/>
         <image name="exit" width="25" height="25"/>
         <image name="launch" width="375" height="667"/>

@@ -17,7 +17,7 @@ class TTTLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let websitePrefix = "http://www.3ttech.cn  version  "
+        let websitePrefix = "http://www.3ttech.cn "
         websiteLabel.text = websitePrefix + TTTRtcEngineKit.getSdkVersion()
         uid = Int64(arc4random() % 100000) + 1
         if let rid = UserDefaults.standard.value(forKey: "ENTERROOMID") as? Int64 {
