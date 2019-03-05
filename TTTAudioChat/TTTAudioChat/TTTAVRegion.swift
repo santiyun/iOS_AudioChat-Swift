@@ -23,7 +23,7 @@ class TTTAVRegion: UIView {
     private func loadNibView() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "TTTAVRegion", bundle: bundle)
-        backgroundView = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
+        backgroundView = nib.instantiate(withOwner: self, options: nil)[0] as? UIView
         backgroundView.frame = bounds
         backgroundView.backgroundColor = UIColor.clear
         addSubview(backgroundView)

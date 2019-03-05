@@ -20,10 +20,7 @@ class TTTRtcManager: NSObject {
     public var me = TTTUser(0)
     private override init() {
         super.init()
-        rtcEngine = TTTRtcEngineKit.sharedEngine(withAppId: "496e737d22ecccb8cfa780406b9964d0", delegate: self)
+        rtcEngine = TTTRtcEngineKit.sharedEngine(withAppId: "496e737d22ecccb8cfa780406b9964d0", delegate: nil)
     }
 }
 
-extension TTTRtcManager: TTTRtcEngineDelegate {
-    
-}

@@ -14,6 +14,7 @@ class TTTLoginViewController: UIViewController {
     private var uid: Int64 = 0
     @IBOutlet private weak var roomIDTF: UITextField!
     @IBOutlet private weak var websiteLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,11 +49,12 @@ class TTTLoginViewController: UIViewController {
         if TTManager.isHighQualityAudio {
             TTManager.rtcEngine.setHighQualityAudioParametersWithFullband(true, stereo: true, fullBitrate: true)
         }
+        
         TTManager.rtcEngine.joinChannel(byKey: nil, channelName: roomIDTF.text!, uid: uid, joinSuccess: nil)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        roomIDTF.resignFirstResponder()
+        view.endEditing(true)
     }
 }
 

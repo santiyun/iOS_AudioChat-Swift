@@ -61,7 +61,7 @@ extension TTTAudioChatViewController: TTTRtcEngineDelegate {
     func rtcEngine(_ engine: TTTRtcEngineKit!, didJoinedOfUid uid: Int64, clientRole: TTTRtcClientRole, isVideoEnabled: Bool, elapsed: Int) {
         let user = TTTUser(uid)
         users.append(user)
-        getAvaiableAVRegion()?.configureRegion(user)
+        getAVRegion()?.configureRegion(user)
     }
     
     func rtcEngine(_ engine: TTTRtcEngineKit!, didOfflineOfUid uid: Int64, reason: TTTRtcUserOfflineReason) {
@@ -99,17 +99,26 @@ extension TTTAudioChatViewController: TTTRtcEngineDelegate {
     
     func rtcEngine(_ engine: TTTRtcEngineKit!, didAudioRouteChanged routing: TTTRtcAudioOutputRouting) {
         self.routing = routing
-        if routing == .audioOutput_Headset {
-            //耳机时不能做扬声器，听筒切换，拔下耳机还是扬声器播放
-            speakerBtn.isEnabled = false
-            speakerBtn.isSelected = false
-        } else {
-            speakerBtn.isEnabled = true
-        }
+//        if routing == .audioOutput_Headset {
+//            //耳机时不能做扬声器，听筒切换，拔下耳机还是扬声器播放
+//            speakerBtn.isEnabled = false
+//            speakerBtn.isSelected = false
+//        } else {
+//            speakerBtn.isEnabled = true
+//        }
     }
     
     func rtcEngineConnectionDidLost(_ engine: TTTRtcEngineKit!) {
-        view.window?.showToast("ConnectionDidLost")
+        TTProgressHud.showHud(view, message: "网络链接丢失，正在重连...", color: nil)
+    }
+    
+    func rtcEngineReconnectServerSucceed(_ engine: TTTRtcEngineKit!) {
+        TTProgressHud.hideHud(for: view)
+    }
+    
+    func rtcEngineReconnectServerTimeout(_ engine: TTTRtcEngineKit!) {
+        TTProgressHud.hideHud(for: view)
+        view.window?.showToast("网络丢失，请检查网络")
         engine.leaveChannel(nil)
         dismiss(animated: true, completion: nil)
     }
@@ -117,22 +126,10 @@ extension TTTAudioChatViewController: TTTRtcEngineDelegate {
     func rtcEngine(_ engine: TTTRtcEngineKit!, didKickedOutOfUid uid: Int64, reason: TTTRtcKickedOutReason) {
         var errorInfo = ""
         switch reason {
-        case .kickedOut_KickedByHost:
-            errorInfo = "被主播踢出"
-        case .kickedOut_PushRtmpFailed:
-            errorInfo = "rtmp推流失败"
-        case .kickedOut_MasterExit:
-            errorInfo = "主播已退出"
         case .kickedOut_ReLogin:
             errorInfo = "重复登录"
         case .kickedOut_NoAudioData:
             errorInfo = "长时间没有上行音频数据"
-        case .kickedOut_NoVideoData:
-            errorInfo = "长时间没有上行视频数据"
-        case .kickedOut_NewChairEnter:
-            errorInfo = "其他人以主播身份进入"
-        case .kickedOut_ChannelKeyExpired:
-            errorInfo = "Channel Key失效"
         default:
             errorInfo = "未知错误"
         }
@@ -141,11 +138,7 @@ extension TTTAudioChatViewController: TTTRtcEngineDelegate {
 }
 
 private extension TTTAudioChatViewController {
-    func getAvaiableAVRegion() -> TTTAVRegion? {
-        return avRegions.first { $0.user == nil }
-    }
-    
-    func getAVRegion(_ uid: Int64) -> TTTAVRegion? {
+    func getAVRegion(_ uid: Int64? = nil) -> TTTAVRegion? {
         return avRegions.first { $0.user?.uid == uid }
     }
     
