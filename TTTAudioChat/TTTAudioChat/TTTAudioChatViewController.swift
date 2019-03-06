@@ -27,11 +27,6 @@ class TTTAudioChatViewController: UIViewController {
         idLabel.text = "ID: \(TTManager.me.uid)"
         avRegions += avRegionsView.subviews.filter { $0 is TTTAVRegion } as! [TTTAVRegion]
         TTManager.rtcEngine.delegate = self
-        //加入房间会回调音频路由，默认是扬声器，这里不可能是听筒
-        if !TTManager.rtcEngine.isSpeakerphoneEnabled() {
-            routing = .audioOutput_Headset
-            speakerBtn.isEnabled = false
-        }
     }
 
     @IBAction private func muteVocieAction(_ sender: UIButton) {
