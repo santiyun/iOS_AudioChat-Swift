@@ -43,8 +43,9 @@ class TTTAudioChatViewController: UIViewController {
     @IBAction private func exitChannel(_ sender: UIButton) {
         let alert = UIAlertController(title: "提示", message: "你确定要退出房间吗？", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "取消", style: .cancel, handler: nil))
-        let sureAction = UIAlertAction(title: "确定", style: .default) { (action) in
+        let sureAction = UIAlertAction(title: "确定", style: .default) { [weak self] (action) in
             TTManager.rtcEngine.leaveChannel(nil)
+            self?.dismiss(animated: true, completion: nil)
         }
         alert.addAction(sureAction)
         present(alert, animated: true, completion: nil)
@@ -129,6 +130,8 @@ extension TTTAudioChatViewController: TTTRtcEngineDelegate {
             errorInfo = "未知错误"
         }
         view.window?.showToast(errorInfo)
+        engine.leaveChannel(nil)
+        dismiss(animated: true, completion: nil)
     }
 }
 

@@ -18,8 +18,8 @@ class TTTLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let websitePrefix = "http://www.3ttech.cn "
-        websiteLabel.text = websitePrefix + TTTRtcEngineKit.getSdkVersion()
+        let dateStr = Bundle.main.infoDictionary![kCFBundleVersionKey as String] as! String
+        websiteLabel.text = TTTRtcEngineKit.getSdkVersion() + "__\(dateStr)"
         uid = Int64(arc4random() % 100000) + 1
         if let rid = UserDefaults.standard.value(forKey: "ENTERROOMID") as? Int64 {
             roomIDTF.text = rid.description
@@ -48,7 +48,7 @@ class TTTLoginViewController: UIViewController {
         TTManager.rtcEngine.setEnableSpeakerphone(true)
         //设置为高音质
         if TTManager.isHighQualityAudio {
-            TTManager.rtcEngine.setHighQualityAudioParametersWithFullband(true, stereo: true, fullBitrate: true)
+            TTManager.rtcEngine.setPrefer(.audioCodec_AAC, bitrate: 96, channels: 1);
         }
         
         TTManager.rtcEngine.joinChannel(byKey: nil, channelName: roomIDTF.text!, uid: uid, joinSuccess: nil)

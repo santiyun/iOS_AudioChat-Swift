@@ -1,6 +1,10 @@
 ### 音频通话-Swift
 
-到[三体官网](http://3ttech.cn)下载最新的SDK，使用申请的AppID
+#### 准备工作
+1. 在三体云官网SDK下载页 [http://3ttech.cn/index.php?menu=53](http://3ttech.cn/index.php?menu=53) 下载对应平台的 音频通话SDK。 放在**TTTLib**目录下
+2. 登录三体云官网 [http://dashboard.3ttech.cn/index/login](http://dashboard.3ttech.cn/index/login) 注册体验账号，进入控制台新建自己的应用并获取APPID。
+
+#### SDK使用
 
 1. 该demo使用链接framework的方式，参考other link flags
 
