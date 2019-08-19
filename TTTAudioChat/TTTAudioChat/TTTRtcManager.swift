@@ -20,6 +20,7 @@ class TTTRtcManager: NSObject {
     public var me = TTTUser(0)
     private override init() {
         super.init()
+        //填写申请的appID
         rtcEngine = TTTRtcEngineKit.sharedEngine(withAppId: <#name#>, delegate: nil)
     }
 }
