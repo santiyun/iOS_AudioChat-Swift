@@ -1,7 +1,7 @@
 ### 音频通话-Swift
 
 #### 准备工作
-1. 在**https://github.com/santiyun/iOS-AudioSDK**下载 音频通话SDK。 放在**TTTLib**目录下
+1. 在 https://github.com/santiyun/iOS-AudioSDK 下载 音频通话SDK。 放在**TTTLib**目录下
 2. 登录三体云官网 [http://dashboard.3ttech.cn/index/login](http://dashboard.3ttech.cn/index/login) 注册体验账号，进入控制台新建自己的应用并获取APPID。
 
 #### SDK使用
